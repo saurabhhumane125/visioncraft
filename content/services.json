@@ -1,0 +1,56 @@
+[
+  {
+    "id": "website-development",
+    "title": "Website Development",
+    "summary": "We engineer high-performance websites and digital experiences that captivate audiences and drive conversions.",
+    "subServices": [
+      "Business", "Portfolio", "Landing Pages", "Corporate", "Responsive Dev", "Redesign", "Maintenance", "SEO-Optimized"
+    ],
+    "accentColor": "primary"
+  },
+  {
+    "id": "digital-marketing",
+    "title": "Digital Marketing",
+    "summary": "Data-driven marketing campaigns and comprehensive brand strategies designed to maximize your digital footprint.",
+    "subServices": [
+      "Social Media Marketing", "Performance Marketing", "Brand Promotion", "Content Strategy", "Campaign Mgmt", "Lead Gen", "SEO", "Local SEO/GBP"
+    ],
+    "accentColor": "primary"
+  },
+  {
+    "id": "graphic-design",
+    "title": "Graphic Design",
+    "summary": "Meticulous brand identities, packaging, and marketing collateral crafted to make your brand instantly recognizable.",
+    "subServices": [
+      "Social Posts", "Posters", "Flyers", "Brochures", "Banners", "Business Cards", "Packaging", "Marketing Creatives"
+    ],
+    "accentColor": "lime"
+  },
+  {
+    "id": "video-editing",
+    "title": "Video Editing",
+    "summary": "Cinematic video production and dynamic motion graphics that tell your brand's story with visual impact.",
+    "subServices": [
+      "Promo Videos", "Reels/Shorts", "YouTube", "Corporate Videos", "Product Videos", "Motion Graphics", "Intro/Outro", "Social Video"
+    ],
+    "accentColor": "lime"
+  },
+  {
+    "id": "2d-visualization",
+    "title": "2D Visualization",
+    "summary": "Precise technical illustrations and layout plans that transform complex spatial concepts into clear visual blueprints.",
+    "subServices": [
+      "Floor Plans", "Layout Plans", "Interior Concepts", "Technical Illustrations", "Presentation Drawings"
+    ],
+    "accentColor": "red"
+  },
+  {
+    "id": "3d-visualization",
+    "title": "3D Visualization",
+    "summary": "Photorealistic architectural and product rendering that brings unbuilt visions to life with stunning accuracy.",
+    "subServices": [
+      "Architectural Renders", "Interior Renders", "Exterior Renders", "Product Visualization", "3D Walkthroughs", "Real Estate Visualization"
+    ],
+    "accentColor": "red"
+  }
+]

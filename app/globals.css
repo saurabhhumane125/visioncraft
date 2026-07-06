@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════
+   VISIONCRAFT — DESIGN SYSTEM FOUNDATION
+   ══════════════════════════════════════════ */
+
+@theme {
+  /* ── Color System (60/30/10) ── */
+  --color-neutral-950: #0C0C0C;
+  --color-neutral-900: #151515;
+  --color-neutral-800: #222222;
+  --color-neutral-200: #EAEAEF;
+  --color-neutral-100: #F7F7F8;
+  --color-neutral-50: #FAFAFE;
+  --color-neutral-white: #FFFFFF;
+
+  --color-electric: #0066FF;
+  --color-electric-dark: #0052CC;
+  --color-mars: #FF3B3B;
+  --color-lime: #B4FF00;
+
+  --color-background: var(--color-neutral-100);
+  --color-foreground: var(--color-neutral-950);
+
+  /* ── Typography Scale ── */
+  --font-display: var(--font-cabinet-grotesk), sans-serif;
+  --font-body: var(--font-switzer), sans-serif;
+
+  --text-hero: clamp(3.25rem, 8vw, 9rem);
+  --text-display: clamp(2.75rem, 5vw, 5rem);
+  --text-editorial: clamp(2.25rem, 4vw, 4rem);
+  --text-quote: clamp(1.5rem, 3vw, 2.5rem);
+  --text-heading: clamp(1.25rem, 2vw, 1.75rem);
+  --text-body-lg: clamp(1.0625rem, 1vw, 1.25rem);
+  --text-body: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  /* ── Section Spacing (compression ↔ expansion) ── */
+  --space-section-tight: clamp(64px, 6vw, 80px);
+  --space-section-normal: clamp(100px, 10vw, 140px);
+  --space-section-generous: clamp(140px, 14vw, 200px);
+
+  /* ── Animations ── */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes draw-line {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, 5%); }
+    30% { transform: translate(7%, -25%); }
+    40% { transform: translate(-5%, 25%); }
+    50% { transform: translate(-15%, 10%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 15%); }
+    80% { transform: translate(3%, 35%); }
+    90% { transform: translate(-10%, 10%); }
+  }
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-950);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-electric);
+  color: white;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-electric);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric-dark);
+}
+
+/* ── Hide scrollbar utility ── */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Grain texture overlay ── */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+/* ── Clip reveal utility ── */
+.clip-reveal {
+  clip-path: inset(0 0 100% 0);
+}
+.clip-reveal.revealed {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* ── Editorial line ── */
+.editorial-line {
+  height: 1px;
+  background: var(--color-electric);
+  transform-origin: left;
+}
+
+/* ── Dark section text defaults ── */
+[data-theme="dark"] {
+  color: var(--color-neutral-100);
+}
+
+/* ── Link hover underline animation ── */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
