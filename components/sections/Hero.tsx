@@ -47,8 +47,8 @@ export function Hero() {
         style={{ y, opacity }}
         className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-8 lg:pb-24 relative z-10 w-full"
       >
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-160px)]">
-          <div className="max-w-[90vw] md:max-w-4xl">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-160px)] gap-12 lg:gap-8">
+          <div className="w-full lg:w-1/2 lg:pr-8">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ export function Hero() {
             >
               <h1
                 className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8 mt-12 md:mt-16 lg:mt-0"
-                style={{ fontSize: "clamp(2rem, 5.5vw, 6.5rem)" }}
+                style={{ fontSize: "clamp(2rem, 5vw, 6.5rem)" }}
               >
                 One studio.
                 <br />
@@ -70,9 +70,9 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col sm:flex-row sm:items-center gap-6 md:gap-12"
+              className="flex flex-col sm:flex-row sm:items-center gap-6 md:gap-8"
             >
-              <p className="text-neutral-950 font-medium tracking-wide" style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}>
+              <p className="text-neutral-950 font-medium tracking-wide whitespace-nowrap" style={{ fontSize: "clamp(0.875rem, 1vw, 1.125rem)" }}>
                 Websites · Design · Video · Marketing · 3D
               </p>
               
