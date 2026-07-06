@@ -7,8 +7,8 @@ export function FinalCTA() {
     <section
       className="relative bg-mars text-neutral-950 overflow-hidden"
       style={{
-        paddingTop: "var(--space-section-generous)",
-        paddingBottom: "var(--space-section-tight)",
+        paddingTop: "var(--space-section-normal)",
+        paddingBottom: "var(--space-section-normal)",
       }}
       aria-label="Call to action"
     >
@@ -37,7 +37,7 @@ export function FinalCTA() {
               </span>
               <h2
                 className="font-display font-bold tracking-tight leading-[0.9] mb-12"
-                style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
+                style={{ fontSize: "clamp(3rem, 6.5vw, 8rem)" }}
               >
                 Your brand's
                 <br />
