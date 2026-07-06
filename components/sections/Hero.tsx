@@ -56,7 +56,7 @@ export function Hero() {
             >
               <h1
                 className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8 mt-12 md:mt-16 lg:mt-0"
-                style={{ fontSize: "clamp(2rem, 5vw, 6.5rem)" }}
+                style={{ fontSize: "clamp(3rem, 6.5vw, 8rem)" }}
               >
                 One studio.
                 <br />
@@ -72,7 +72,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row sm:items-center gap-6 md:gap-8"
             >
-              <p className="text-neutral-950 font-medium tracking-wide whitespace-nowrap" style={{ fontSize: "clamp(0.875rem, 1vw, 1.125rem)" }}>
+              <p className="text-neutral-950 font-medium tracking-wide whitespace-nowrap" style={{ fontSize: "clamp(0.95rem, 1.3vw, 1.25rem)" }}>
                 Websites · Design · Video · Marketing · 3D
               </p>
               
