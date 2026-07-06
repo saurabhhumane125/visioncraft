@@ -48,14 +48,14 @@ export function Hero() {
         className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-8 lg:pb-24 relative z-10 w-full"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-160px)] gap-12 lg:gap-8">
-          <div className="w-full lg:w-1/2 lg:pr-8">
+          <div className="w-full lg:w-1/2 lg:pr-8 lg:-mt-24">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1
-                className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8 mt-12 md:mt-16 lg:mt-0"
+                className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8 mt-4 md:mt-8 lg:mt-0"
                 style={{ fontSize: "clamp(3rem, 6.5vw, 8rem)" }}
               >
                 One studio.
@@ -70,7 +70,7 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col sm:flex-row sm:items-center gap-6 md:gap-8"
+              className="flex flex-row items-center flex-wrap gap-4 md:gap-8"
             >
               <p className="text-neutral-950 font-medium tracking-wide whitespace-nowrap" style={{ fontSize: "clamp(0.95rem, 1.3vw, 1.25rem)" }}>
                 Websites · Design · Video · Marketing · 3D
@@ -78,7 +78,7 @@ export function Hero() {
               
               <a
                 href="#services"
-                className="group inline-flex items-center gap-3 bg-neutral-950 text-lime rounded-full h-12 md:h-14 px-8 text-sm md:text-base font-bold tracking-wide transition-transform duration-300 hover:scale-105"
+                className="group inline-flex shrink-0 whitespace-nowrap items-center gap-3 bg-neutral-950 text-lime rounded-full h-12 md:h-14 px-8 text-sm md:text-base font-bold tracking-wide transition-transform duration-300 hover:scale-105"
               >
                 Explore Our Work
                 <svg
