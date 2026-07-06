@@ -20,7 +20,7 @@ export function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen bg-electric overflow-hidden flex items-end pb-24 lg:pb-32"
+      className="relative min-h-screen bg-electric overflow-hidden flex items-center pt-24"
       aria-label="Hero"
     >
       {/* Vibrant Abstract Elements - not "AI" blobs, but energetic brand colors */}
@@ -45,7 +45,7 @@ export function Hero() {
 
       <motion.div
         style={{ y, opacity }}
-        className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-24 lg:pb-24 relative z-10 w-full"
+        className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-8 lg:pb-24 relative z-10 w-full"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-160px)]">
           <div className="max-w-[90vw] md:max-w-4xl">
@@ -56,7 +56,7 @@ export function Hero() {
             >
               <h1
                 className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8 mt-12 md:mt-16 lg:mt-0"
-                style={{ fontSize: "clamp(2.5rem, 6.5vw, 7.5rem)" }}
+                style={{ fontSize: "clamp(2rem, 5.5vw, 6.5rem)" }}
               >
                 One studio.
                 <br />

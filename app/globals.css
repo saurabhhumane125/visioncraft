@@ -37,9 +37,9 @@
   --text-xs: 0.75rem;
 
   /* ── Section Spacing (compression ↔ expansion) ── */
-  --space-section-tight: clamp(64px, 6vw, 80px);
-  --space-section-normal: clamp(100px, 10vw, 140px);
-  --space-section-generous: clamp(140px, 14vw, 200px);
+  --space-section-tight: clamp(40px, 4vw, 64px);
+  --space-section-normal: clamp(60px, 6vw, 100px);
+  --space-section-generous: clamp(80px, 8vw, 140px);
 
   /* ── Animations ── */
   @keyframes marquee {
