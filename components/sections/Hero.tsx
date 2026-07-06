@@ -45,9 +45,9 @@ export function Hero() {
 
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 w-full px-6 md:px-12 lg:px-16 flex flex-col justify-end"
+        className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-24 lg:pb-24 relative z-10 w-full"
       >
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-160px)]">
           <div className="max-w-[90vw] md:max-w-4xl">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -55,8 +55,8 @@ export function Hero() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1
-                className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8"
-                style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
+                className="font-display font-bold tracking-tight leading-[0.95] text-neutral-950 mb-8 mt-12 md:mt-16 lg:mt-0"
+                style={{ fontSize: "clamp(2.5rem, 6.5vw, 7.5rem)" }}
               >
                 One studio.
                 <br />
