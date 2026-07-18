@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export function FinalCTA() {
   return (
     <section
-      className="relative bg-mars text-neutral-950 overflow-hidden"
+      className="relative bg-neutral-950 text-neutral-50 overflow-hidden"
       style={{
         paddingTop: "var(--space-section-normal)",
         paddingBottom: "var(--space-section-normal)",
@@ -32,7 +32,7 @@ export function FinalCTA() {
           {/* Left Column: Huge typography (col 1-7) */}
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
-              <span className="text-neutral-950/60 text-sm font-mono tracking-widest mb-8 block uppercase font-bold">
+              <span className="text-neutral-50/60 text-sm font-mono tracking-widest mb-8 block uppercase font-bold">
                 Start a Project
               </span>
               <h2
@@ -45,7 +45,7 @@ export function FinalCTA() {
                 <br />
                 starts here.
               </h2>
-              <p className="text-neutral-950/80 text-xl md:text-2xl leading-relaxed max-w-lg font-medium">
+              <p className="text-neutral-50/80 text-xl md:text-2xl leading-relaxed max-w-lg font-medium">
                 Stop settling for templates. We build award-winning digital experiences that position you as the industry leader.
               </p>
             </div>
@@ -55,8 +55,8 @@ export function FinalCTA() {
           <div className="lg:col-span-4 lg:col-start-9 flex flex-col">
             
             {/* Value Props / Benefits */}
-            <div className="border-t-2 border-neutral-950/20 pt-8 pb-12">
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-neutral-950/50">Every Project Includes</h3>
+            <div className="border-t-2 border-neutral-50/20 pt-8 pb-12">
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-neutral-50/50">Every Project Includes</h3>
               <ul className="space-y-4">
                 {[
                   "Dedicated creative director",
@@ -64,8 +64,8 @@ export function FinalCTA() {
                   "High-performance architecture",
                   "Premium brand positioning"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 font-bold text-lg text-neutral-950">
-                    <span className="w-1.5 h-1.5 bg-neutral-950 rounded-full" />
+                  <li key={i} className="flex items-center gap-4 font-bold text-lg text-neutral-50">
+                    <span className="w-1.5 h-1.5 bg-neutral-50 rounded-full" />
                     {item}
                   </li>
                 ))}
@@ -73,25 +73,25 @@ export function FinalCTA() {
             </div>
 
             {/* Contact Details */}
-            <div className="border-t-2 border-neutral-950/20 pt-8 pb-12 flex flex-col gap-8">
+            <div className="border-t-2 border-neutral-50/20 pt-8 pb-12 flex flex-col gap-8">
               <div>
-                <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-950/50">Project Inquiry</span>
-                <a href="mailto:hello@visioncraftagency.com" className="text-2xl font-bold hover:opacity-70 transition-opacity link-underline">
-                  hello@visioncraftagency.com
+                <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-50/50">Project Inquiry</span>
+                <a href="mailto:visioncraftstudio22@gmail.com" className="text-2xl font-bold hover:opacity-70 transition-opacity link-underline">
+                  visioncraftstudio22@gmail.com
                 </a>
               </div>
               
               <div className="flex justify-between items-end">
                 <div>
-                  <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-950/50">Phone</span>
+                  <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-50/50">Phone</span>
                   <p className="text-2xl font-bold">
-                    +91 98765 43210
+                    7887962110
                   </p>
                 </div>
                 <div className="text-right">
-                  <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-950/50">Response Time</span>
+                  <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-50/50">Response Time</span>
                   <p className="text-lg font-bold flex items-center gap-2 justify-end">
-                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-950 animate-pulse" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-50 animate-pulse" />
                     Under 24H
                   </p>
                 </div>
@@ -99,12 +99,12 @@ export function FinalCTA() {
             </div>
 
             {/* CTA Button */}
-            <div className="border-t-2 border-neutral-950/20 pt-10">
+            <div className="border-t-2 border-neutral-50/20 pt-10">
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-between bg-neutral-950 text-white h-20 px-8 font-display text-2xl font-bold tracking-wide transition-all shadow-xl hover:bg-neutral-900"
+                className="w-full flex items-center justify-between bg-white text-neutral-950 h-20 px-8 font-display text-2xl font-bold tracking-wide transition-all shadow-xl hover:bg-neutral-200"
               >
                 <span>Initiate Project</span>
                 <svg
@@ -121,7 +121,7 @@ export function FinalCTA() {
                   />
                 </svg>
               </motion.a>
-              <p className="text-center text-xs font-bold uppercase tracking-widest mt-6 text-neutral-950/50">
+              <p className="text-center text-xs font-bold uppercase tracking-widest mt-6 text-neutral-50/50">
                 Trusted by 50+ global brands
               </p>
             </div>
