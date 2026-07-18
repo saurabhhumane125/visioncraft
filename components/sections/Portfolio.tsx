@@ -4,12 +4,21 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import { useRef } from "react"
 
-const PROJECTS = [
+type Project = {
+  id: number
+  name: string
+  category: string
+  image: string
+  link?: string
+}
+
+const PROJECTS: Project[] = [
   {
     id: 1,
-    name: "Azure Residences",
-    category: "3D Visualization · Architecture",
-    image: "/images/portfolio-villa.png",
+    name: "Odo The Gaming Bay",
+    category: "Web Design · Gaming",
+    image: "/images/nexgen-gaming.png",
+    link: "https://nexgen-gaming.vercel.app/",
   },
   {
     id: 2,
@@ -83,15 +92,9 @@ export function Portfolio() {
         {/* Framer-Motion driven horizontal gallery */}
         <div className="flex pl-5 md:pl-10 lg:pl-16 relative">
           <motion.div style={{ x }} className="flex gap-8 md:gap-12 w-max">
-            {PROJECTS.map((project, idx) => (
-              <div
-                key={project.id}
-                className="w-[85vw] sm:w-[500px] lg:w-[600px] shrink-0 group flex flex-col"
-              >
-                {/* Fixed aspect ratio card container */}
-                <div
-                  className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
-                >
+            {PROJECTS.map((project, idx) => {
+              const CardContent = (
+                <>
                   <Image
                     src={project.image}
                     alt={`${project.name} — ${project.category}`}
@@ -100,12 +103,35 @@ export function Portfolio() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   {/* Subtle dark overlay for premium feel */}
-                  <div className="absolute inset-0 bg-neutral-950/0 group-hover:bg-neutral-950/5 transition-colors duration-500 pointer-events-none" />
-                </div>
+                  <div className={`absolute inset-0 transition-all duration-500 flex items-center justify-center ${project.link ? 'bg-neutral-950/0 group-hover:bg-neutral-950/30' : 'bg-neutral-950/0 group-hover:bg-neutral-950/5 pointer-events-none'}`}>
+                    {project.link && (
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white text-neutral-950 px-6 py-3 rounded-full font-bold text-sm tracking-wide shadow-xl">
+                        Visit Live Site
+                      </span>
+                    )}
+                  </div>
+                </>
+              )
+
+              return (
+              <div
+                key={project.id}
+                className="w-[85vw] sm:w-[500px] lg:w-[600px] shrink-0 group flex flex-col"
+              >
+                {/* Fixed aspect ratio card container */}
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)] cursor-pointer block">
+                    {CardContent}
+                  </a>
+                ) : (
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+                    {CardContent}
+                  </div>
+                )}
 
                 {/* Info */}
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mt-5 gap-2 px-2">
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-neutral-950 tracking-tight transition-colors duration-300">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-neutral-950 tracking-tight transition-colors duration-300 group-hover:text-electric">
                     {project.name}
                   </h3>
                   <span className="text-xs text-neutral-950/40 uppercase tracking-widest font-bold">
@@ -113,7 +139,7 @@ export function Portfolio() {
                   </span>
                 </div>
               </div>
-            ))}
+            )})}
             
             {/* End padding to ensure last item is fully visible */}
             <div className="w-[10vw] shrink-0" />
