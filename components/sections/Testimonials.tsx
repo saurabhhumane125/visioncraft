@@ -142,7 +142,7 @@ export function Testimonials() {
         </div>
 
         {/* Main Content Area */}
-        <div className="relative min-h-[550px] lg:min-h-[400px]">
+        <div className="relative min-h-[400px] lg:min-h-[320px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -150,50 +150,23 @@ export function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start absolute inset-0 w-full"
+              className="absolute inset-0 w-full flex flex-col"
             >
-              {/* Quote Column */}
-              <div className="lg:col-span-7 flex flex-col h-full">
+              <div className="max-w-5xl flex flex-col h-full">
                 <Stars />
                 <blockquote
-                  className="font-display font-medium tracking-tight leading-[1.3] text-neutral-950 mb-8 max-w-2xl"
-                  style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
+                  className="font-display font-medium tracking-tight leading-[1.25] text-neutral-950 mb-10"
+                  style={{ fontSize: "clamp(1.75rem, 4vw, 3.25rem)" }}
                 >
                   "{current.quote}"
                 </blockquote>
                 <div className="mt-auto">
-                  <cite className="not-italic font-bold text-lg block text-neutral-950">
+                  <cite className="not-italic font-bold text-xl block text-neutral-950">
                     {current.name}
                   </cite>
-                  <span className="text-neutral-950/60 text-sm font-medium block mt-1">
+                  <span className="text-neutral-950/60 text-base font-medium block mt-1">
                     {current.role}, <span className="text-neutral-950">{current.company}</span>
                   </span>
-                </div>
-              </div>
-
-              {/* Data & Services Column */}
-              <div className="lg:col-span-5 flex flex-col gap-8 lg:pt-14">
-                <div className="border-l border-neutral-950/10 pl-6">
-                  <h4 className="text-xs uppercase tracking-widest text-neutral-950/40 font-bold mb-2">Industry</h4>
-                  <p className="font-medium text-neutral-950">{current.industry}</p>
-                </div>
-                
-                <div className="border-l border-neutral-950/10 pl-6">
-                  <h4 className="text-xs uppercase tracking-widest text-neutral-950/40 font-bold mb-3">Services Delivered</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {current.services.map((service, i) => (
-                      <span key={i} className="px-3 py-1 bg-neutral-950/5 text-neutral-950 text-xs font-bold rounded-full">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border-l-2 border-lime pl-6 py-1">
-                  <h4 className="text-xs uppercase tracking-widest text-neutral-950/40 font-bold mb-2">Measurable Outcome</h4>
-                  <p className="font-display font-bold text-electric text-xl leading-tight">
-                    {current.outcome}
-                  </p>
                 </div>
               </div>
             </motion.div>
