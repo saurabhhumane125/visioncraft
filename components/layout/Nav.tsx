@@ -3,12 +3,13 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X } from "lucide-react"
 
 const NAV_LINKS = [
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#process", label: "Process" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "/#services", label: "Services" },
+  { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#process", label: "Process" },
+  { href: "/#testimonials", label: "Testimonials" },
 ]
 
 export default function Nav() {
@@ -40,27 +41,27 @@ export default function Nav() {
     <>
       {/* Top bar */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
             ? "bg-neutral-950/95 backdrop-blur-md"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="w-full px-6 md:px-12 lg:px-16 flex items-center justify-between h-20 md:h-24">
           <Link
+
             href="/"
             className="font-display text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 z-[60]"
           >
-            VisionCraft
+            VisionCraft Studio
           </Link>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-neutral-100 text-base md:text-lg font-medium tracking-widest uppercase z-[60] hover:text-electric transition-colors"
+            className="text-neutral-100 z-[60] hover:text-electric transition-colors flex items-center justify-center p-2 -mr-2"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
-            {isOpen ? "Close" : "Menu"}
+            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
 
