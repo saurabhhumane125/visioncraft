@@ -22,9 +22,10 @@ const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    name: "The Urban Roast",
-    category: "Brand Identity · Packaging",
-    image: "/images/portfolio-restaurant.png",
+    name: "Let's Smile Dental",
+    category: "Web Design · Healthcare",
+    image: "/images/lets-smile-dental.png",
+    link: "https://lets-smile-dental.vercel.app/",
   },
   {
     id: 3,
