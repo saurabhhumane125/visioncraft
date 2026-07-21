@@ -23,25 +23,6 @@ export function Hero() {
       className="relative min-h-screen bg-electric overflow-hidden flex items-center pt-24"
       aria-label="Hero"
     >
-      {/* Vibrant Abstract Elements - not "AI" blobs, but energetic brand colors */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-lime/40 blur-[120px] rounded-full mix-blend-overlay"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.5, 1],
-            rotate: [0, -90, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[20%] -left-[10%] w-[50vw] h-[50vw] bg-mars/40 blur-[120px] rounded-full mix-blend-overlay"
-        />
-      </div>
 
       <motion.div
         style={{ y, opacity }}

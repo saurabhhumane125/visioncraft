@@ -40,10 +40,16 @@ export default function Footer() {
                   Start a Conversation
                 </span>
                 <a
-                  href="mailto:hello@visioncraftagency.com"
+                  href="mailto:visioncraftstudio22@gmail.com"
                   className="text-electric text-xl md:text-2xl font-bold inline-block hover:text-electric-dark transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-electric after:origin-bottom-right hover:after:origin-bottom-left hover:after:scale-x-0 after:transition-transform after:duration-500 pb-1"
                 >
-                  hello@visioncraftagency.com
+                  visioncraftstudio22@gmail.com
+                </a>
+                <a
+                  href="tel:7887962110"
+                  className="block mt-4 text-neutral-100/70 hover:text-electric transition-colors"
+                >
+                  7887962110
                 </a>
               </div>
 
