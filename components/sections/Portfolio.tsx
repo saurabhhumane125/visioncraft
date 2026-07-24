@@ -29,9 +29,10 @@ const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    name: "Prime Smiles",
-    category: "Web Design · Healthcare",
-    image: "/images/portfolio-dental.png",
+    name: "Raman Humane",
+    category: "2D Plan With Furniture",
+    image: "/images/portfolio-architecture.png",
+    link: "/documents/raman-humane-2d-plan.pdf",
   },
   {
     id: 4,
