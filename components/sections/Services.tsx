@@ -109,14 +109,14 @@ export function Services() {
                   alt={visual.label}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out will-change-transform"
+                  className="object-cover opacity-80 md:opacity-50 md:grayscale group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out will-change-transform"
                 />
                 
                 {/* Smooth Gradient Overlay (Better performance than mix-blend) */}
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/40 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
                 
                 {/* Tint Overlay on Hover */}
-                <div className={`absolute inset-0 ${visual.bgClass} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 ${visual.bgClass} opacity-15 md:opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
 
                 {/* Content */}
                 <div className="relative z-10 w-full transform-gpu transition-transform duration-500 ease-out group-hover:-translate-y-2">
