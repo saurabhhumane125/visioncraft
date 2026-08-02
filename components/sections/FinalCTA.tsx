@@ -41,6 +41,7 @@ export function FinalCTA() {
   return (
     <>
       <section
+        id="contact"
         className="relative bg-white text-neutral-950 overflow-hidden"
         style={{
           paddingTop: "var(--space-section-normal)",

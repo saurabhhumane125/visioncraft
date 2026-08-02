@@ -76,31 +76,31 @@ export default function Footer() {
               </span>
               <ul className="flex flex-col gap-4 text-sm font-medium text-neutral-100/60">
                 <li>
-                  <Link href="#" className="hover:text-electric transition-colors flex items-center gap-2 group">
+                  <Link href="/#services" className="hover:text-electric transition-colors flex items-center gap-2 group">
                     <span className="w-0 h-[1px] bg-electric transition-all duration-300 group-hover:w-4" />
                     Website Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-electric transition-colors flex items-center gap-2 group">
+                  <Link href="/#services" className="hover:text-electric transition-colors flex items-center gap-2 group">
                     <span className="w-0 h-[1px] bg-electric transition-all duration-300 group-hover:w-4" />
                     Graphic Design
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-electric transition-colors flex items-center gap-2 group">
+                  <Link href="/#services" className="hover:text-electric transition-colors flex items-center gap-2 group">
                     <span className="w-0 h-[1px] bg-electric transition-all duration-300 group-hover:w-4" />
                     Video Editing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-electric transition-colors flex items-center gap-2 group">
+                  <Link href="/#services" className="hover:text-electric transition-colors flex items-center gap-2 group">
                     <span className="w-0 h-[1px] bg-electric transition-all duration-300 group-hover:w-4" />
                     Digital Marketing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-electric transition-colors flex items-center gap-2 group">
+                  <Link href="/#services" className="hover:text-electric transition-colors flex items-center gap-2 group">
                     <span className="w-0 h-[1px] bg-electric transition-all duration-300 group-hover:w-4" />
                     3D Visualization
                   </Link>
@@ -115,17 +115,17 @@ export default function Footer() {
               </span>
               <ul className="flex flex-col gap-4 text-sm font-medium text-neutral-100/60">
                 <li>
-                  <Link href="#" className="hover:text-neutral-100 transition-colors">
+                  <Link href="/#process" className="hover:text-neutral-100 transition-colors">
                     About Studio
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-neutral-100 transition-colors">
+                  <Link href="/#portfolio" className="hover:text-neutral-100 transition-colors">
                     Selected Work
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-neutral-100 transition-colors">
+                  <Link href="/#contact" className="hover:text-neutral-100 transition-colors">
                     Contact Us
                   </Link>
                 </li>
