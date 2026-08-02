@@ -196,9 +196,9 @@ export function Services() {
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 priority={idx === 0}
-                                className="object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700 hover:scale-105 will-change-transform"
+                                className="object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105 will-change-transform"
                               />
-                              <div className={`absolute inset-0 ${visual.bgClass} mix-blend-multiply opacity-40 pointer-events-none transform-gpu`} />
+                              <div className={`absolute inset-0 ${visual.bgClass} opacity-30 hover:opacity-0 transition-opacity duration-700 pointer-events-none`} />
                               
                               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                                 <motion.span 
