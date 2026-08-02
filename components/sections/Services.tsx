@@ -85,8 +85,12 @@ export function Services() {
               img: "/images/portfolio-product.png",
             }
             
-            // Create a dynamic bento layout where the 1st and 4th items span 2 columns on large screens
-            const isWide = idx === 0 || idx === 3
+            // Create a dynamic bento layout where the 1st, 4th, and 6th items span 2 columns on large screens
+            // Total columns per row = 3.
+            // Row 1: idx 0 (2) + idx 1 (1) = 3
+            // Row 2: idx 2 (1) + idx 3 (2) = 3
+            // Row 3: idx 4 (1) + idx 5 (2) = 3
+            const isWide = idx === 0 || idx === 3 || idx === 5
 
             return (
               <motion.div
