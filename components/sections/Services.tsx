@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 import servicesData from "@/content/services.json"
 
 const SERVICE_VISUALS: Record<string, { bgClass: string; label: string; textClass: string; img: string }> = {
@@ -187,14 +188,17 @@ export function Services() {
                           {/* Right: Vibrant visual with Image */}
                           <div className="lg:col-span-5">
                             <div
-                              className="relative w-full aspect-[16/9] lg:aspect-[4/3] bg-neutral-900 overflow-hidden rounded-sm"
+                              className="relative w-full aspect-[16/9] lg:aspect-[4/3] bg-neutral-900 overflow-hidden rounded-sm transform-gpu"
                             >
-                              <img 
+                              <Image 
                                 src={visual.img} 
                                 alt={visual.label} 
-                                className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700 hover:scale-105"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                priority={idx === 0}
+                                className="object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700 hover:scale-105 will-change-transform"
                               />
-                              <div className={`absolute inset-0 ${visual.bgClass} mix-blend-multiply opacity-40 pointer-events-none`} />
+                              <div className={`absolute inset-0 ${visual.bgClass} mix-blend-multiply opacity-40 pointer-events-none transform-gpu`} />
                               
                               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                                 <motion.span 
