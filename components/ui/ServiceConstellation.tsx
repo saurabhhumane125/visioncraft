@@ -124,10 +124,10 @@ export function ServiceConstellation() {
 
         {/* Central VisionCraft Node */}
         <motion.div
-          className="absolute z-10 w-28 h-28 rounded-full bg-neutral-950 border border-white/10 flex items-center justify-center shadow-2xl"
+          className="absolute z-10 w-32 h-32 rounded-full bg-neutral-950 border border-white/10 flex items-center justify-center shadow-2xl text-center"
           animate={getFloatingAnimation(0) as any}
         >
-          <span className="font-display font-bold text-white tracking-tight text-sm">VisionCraft</span>
+          <span className="font-display font-bold text-white tracking-tight text-sm leading-tight">VisionCraft<br />Studio</span>
         </motion.div>
 
         {/* Orbiting Service Nodes */}
