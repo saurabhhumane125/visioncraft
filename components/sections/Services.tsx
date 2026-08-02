@@ -33,13 +33,13 @@ const SERVICE_VISUALS: Record<string, { bgClass: string; label: string; textClas
     bgClass: "bg-neutral-200",
     label: "2D",
     textClass: "text-neutral-950",
-    img: "/images/portfolio-jewelry.png",
+    img: "/images/portfolio-architecture.png",
   },
   "3d-visualization": {
     bgClass: "bg-electric-dark",
     label: "3D",
     textClass: "text-white",
-    img: "/images/portfolio-dental.png",
+    img: "/images/portfolio-villa.png",
   },
 }
 
