@@ -27,7 +27,7 @@ const SERVICE_VISUALS: Record<string, { bgClass: string; label: string; textClas
     bgClass: "bg-mars",
     label: "Motion",
     textClass: "text-white",
-    img: "/images/portfolio-villa.png",
+    img: "/images/nexgen-gaming.png",
   },
   "2d-visualization": {
     bgClass: "bg-neutral-200",
