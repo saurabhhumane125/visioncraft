@@ -40,12 +40,6 @@ const PROJECTS: Project[] = [
     category: "Social Campaign · Marketing",
     image: "/images/portfolio-cafe.png",
   },
-  {
-    id: 5,
-    name: "Aurum Jewels",
-    category: "Ecommerce · Web & Photography",
-    image: "/images/portfolio-jewelry.png",
-  },
 ]
 
 export function Portfolio() {
@@ -54,14 +48,14 @@ export function Portfolio() {
     target: targetRef,
   })
 
-  // We'll adjust the translation to -55% to perfectly align the last card with the edge of the screen and eliminate empty space.
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-55%"])
+  // We'll adjust the translation to -40% for 4 cards to perfectly align the last card with the edge of the screen.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"])
 
   return (
     <section
       ref={targetRef}
       id="portfolio"
-      className="relative bg-white h-[250vh]" // Reduced from 400vh to eliminate extra space
+      className="relative bg-white h-[200vh]" // Reduced from 250vh for 4 cards
       aria-label="Portfolio"
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden pt-20">
