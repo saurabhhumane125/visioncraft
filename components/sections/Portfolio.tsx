@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 
 type Project = {
   id: number
@@ -44,12 +44,50 @@ const PROJECTS: Project[] = [
 
 export function Portfolio() {
   const targetRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  
   const { scrollYProgress } = useScroll({
     target: targetRef,
   })
 
-  // We'll adjust the translation to -40% for 4 cards to perfectly align the last card with the edge of the screen.
+  // Desktop horizontal scroll amount
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"])
+
+  // Mobile auto-scroll logic
+  useEffect(() => {
+    const el = scrollContainerRef.current
+    if (!el) return
+    let interval: NodeJS.Timeout
+
+    const startAutoScroll = () => {
+      interval = setInterval(() => {
+        if (el) {
+          el.scrollLeft += 1
+          if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+            el.scrollLeft = 0
+          }
+        }
+      }, 30) // Smooth auto scroll speed
+    }
+
+    startAutoScroll()
+
+    // Pause on interaction
+    const handleInteraction = () => {
+      clearInterval(interval)
+    }
+
+    el.addEventListener('touchstart', handleInteraction, { passive: true })
+    el.addEventListener('mousedown', handleInteraction, { passive: true })
+    el.addEventListener('wheel', handleInteraction, { passive: true })
+
+    return () => {
+      clearInterval(interval)
+      el.removeEventListener('touchstart', handleInteraction)
+      el.removeEventListener('mousedown', handleInteraction)
+      el.removeEventListener('wheel', handleInteraction)
+    }
+  }, [])
 
   const Header = ({ isMobile }: { isMobile?: boolean }) => (
     <div className={`mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-16 flex flex-col sm:flex-row sm:items-end justify-between ${isMobile ? 'mb-10' : 'mb-12'}`}>
@@ -130,24 +168,28 @@ export function Portfolio() {
 
   return (
     <section id="portfolio" aria-label="Portfolio">
-      {/* MOBILE VIEW (Infinite Marquee) */}
-      <div className="block md:hidden bg-white py-16 overflow-hidden relative">
+      {/* MOBILE VIEW (Scrollable + Auto) */}
+      <div className="block md:hidden bg-white py-16 relative">
         <Header isMobile />
         
-        <div className="flex w-full overflow-hidden relative pl-5">
-          <motion.div
-            className="flex gap-6 whitespace-nowrap"
-            animate={{
-              x: ["0%", "-50%"],
-            }}
-            transition={{
-              duration: 30,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-          >
-            {[...PROJECTS, ...PROJECTS].map((project, idx) => renderCard(project, idx))}
-          </motion.div>
+        {/* Native scroll container for manual swiping */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex w-full overflow-x-auto snap-x snap-mandatory pl-5 pr-5 pb-8 scroll-smooth"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {/* We add an inline style to hide webkit scrollbars directly since globals.css might not have it */}
+          <style>{`
+            div::-webkit-scrollbar { display: none; }
+          `}</style>
+
+          <div className="flex gap-6 w-max">
+            {PROJECTS.map((project, idx) => (
+              <div key={`mobile-proj-${idx}`} className="snap-center">
+                {renderCard(project, idx)}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
