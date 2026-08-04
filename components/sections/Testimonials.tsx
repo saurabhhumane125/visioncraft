@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 const TESTIMONIALS = [
   {
@@ -9,68 +8,49 @@ const TESTIMONIALS = [
     name: "Dr. Siddharth Verma",
     role: "Chief Orthodontist",
     company: "Prime Smiles",
-    industry: "Healthcare",
     quote: "From our clinic's complete rebrand to the new patient-focused digital experience, VisionCraft's work completely transformed how our patients perceive us. The quality is absolutely premium.",
-    services: ["Brand Identity", "Website Development"],
-    outcome: "40% increase in monthly patient bookings.",
   },
   {
     id: "02",
     name: "Ananya Desai",
     role: "Director of Marketing",
     company: "The Haven Resort",
-    industry: "Hospitality",
     quote: "The visual assets VisionCraft delivered were breathtakingly beautiful. They perfectly captured the luxury and tranquility of our property, driving immediate engagement across all channels.",
-    services: ["Digital Marketing", "2D & 3D Visualization"],
-    outcome: "300% boost in direct summer bookings.",
   },
   {
     id: "03",
     name: "Rohan Kapoor",
     role: "Principal Architect",
     company: "Kapoor & Associates",
-    industry: "Architecture",
     quote: "They are a rare breed of creatives who truly understand architectural nuances. The renders and marketing collateral they produced gave our pitches an undeniable edge.",
-    services: ["2D & 3D Visualization", "Graphic Design"],
-    outcome: "Successfully won 3 major luxury contracts.",
   },
   {
     id: "04",
     name: "Vikram Singhania",
     role: "Managing Director",
     company: "Horizon Realty",
-    industry: "Real Estate",
     quote: "Their video production team is exceptional. They didn't just show our properties; they told a compelling story that resonated deeply with high-net-worth investors.",
-    services: ["Video Production", "Website Development"],
-    outcome: "Phase 1 properties sold out in record time.",
   },
   {
     id: "05",
     name: "Arjun Reddy",
     role: "Founder",
     company: "The Urban Roast",
-    industry: "Food & Beverage",
     quote: "VisionCraft didn't just build a brand; they captured the soul of our cafe. Their attention to detail and cohesive design system turned our vision into a cultural staple.",
-    services: ["Brand Identity", "Digital Marketing"],
-    outcome: "60% increase in organic weekend footfall.",
   },
   {
     id: "06",
     name: "Priya Sharma",
     role: "Head of Operations",
     company: "Apex Industries",
-    industry: "Manufacturing",
     quote: "We needed a modern overhaul to appeal to global clients. The new corporate website and facility showcase videos instantly established our credibility on the international stage.",
-    services: ["Website Development", "Video Production"],
-    outcome: "Successfully expanded into 3 new international markets.",
   },
 ]
 
-// Star Rating SVG Component
 const Stars = () => (
   <div className="flex gap-1 text-electric mb-6">
     {[1, 2, 3, 4, 5].map((star) => (
-      <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <svg key={star} className="w-4 h-4 fill-current" viewBox="0 0 24 24">
         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
       </svg>
     ))}
@@ -78,148 +58,95 @@ const Stars = () => (
 )
 
 export function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
-  
-  const DURATION = 5000 // 5 seconds
-
-  const next = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length)
-  }, [])
-
-  // Auto-advance
-  useEffect(() => {
-    if (isHovered) {
-      if (timerRef.current) clearInterval(timerRef.current)
-      return
-    }
-    timerRef.current = setInterval(next, DURATION)
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current)
-    }
-  }, [isHovered, next, currentIndex])
-
-  const current = TESTIMONIALS[currentIndex]
-
   return (
     <section
       id="testimonials"
-      className="text-white relative overflow-hidden bg-[#050505]"
+      className="relative overflow-hidden bg-[#030303] text-white"
       style={{
         paddingTop: "var(--space-section-normal)",
         paddingBottom: "var(--space-section-normal)",
       }}
       aria-label="Client Testimonials"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
     >
-      {/* Dark mode glow effects */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-electric/5 blur-[120px] rounded-full pointer-events-none -z-10 transform translate-x-1/4 -translate-y-1/4" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-neutral-800/20 blur-[100px] rounded-full pointer-events-none -z-10 transform -translate-x-1/4 translate-y-1/4" />
+      {/* Eye-catching Background Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-electric/20 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-600/20 blur-[150px] rounded-full pointer-events-none -z-10" />
       
-      {/* Subtle Grain Texture */}
+      {/* Grain Texture Overlay */}
       <div className="absolute inset-0 grain opacity-20 pointer-events-none -z-10" />
-
-      {/* Massive Background Quotation Mark */}
-      <div className="absolute top-[10%] left-[5%] text-[30vw] leading-none font-display text-neutral-900/40 select-none pointer-events-none z-0">
-        "
-      </div>
 
       <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-20 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-10">
-          <div className="max-w-2xl">
-            <span className="text-electric font-bold tracking-widest text-xs uppercase mb-6 block font-mono">
-              [ Client Outcomes ]
-            </span>
-            <h2
-              className="font-display font-bold tracking-tight text-white leading-[1.05]"
-              style={{ fontSize: "var(--text-display)" }}
-            >
-              Trusted by<br/>ambitious brands.
-            </h2>
-          </div>
-          <p className="text-white/50 font-medium max-w-sm text-sm md:text-base leading-relaxed md:text-right pb-2">
-            We don't just deliver creative assets. We engineer partnerships that drive measurable business outcomes and elevate market positioning.
+        <div className="mb-20 md:mb-32 text-center max-w-3xl mx-auto">
+          <span className="text-electric font-bold tracking-[0.2em] text-xs uppercase mb-6 block font-mono">
+            [ Client Success ]
+          </span>
+          <h2
+            className="font-display font-bold tracking-tight text-white leading-[1.05] mb-6"
+            style={{ fontSize: "var(--text-display)" }}
+          >
+            Don't just take our word for it.
+          </h2>
+          <p className="text-white/60 font-medium text-lg leading-relaxed">
+            See how we've helped visionary brands elevate their digital presence, dominate their markets, and build lasting connections.
           </p>
         </div>
 
-        {/* Main Content Area - Increased min-height to strictly prevent overlap */}
-        <div className="relative min-h-[480px] sm:min-h-[400px] lg:min-h-[350px]">
-          <AnimatePresence mode="wait">
+        {/* Modern 3-Column Staggered Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+          {TESTIMONIALS.map((testimonial, idx) => (
             <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute inset-0 w-full flex flex-col"
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.7, 
+                delay: idx * 0.1, 
+                ease: [0.21, 1.11, 0.81, 0.99] 
+              }}
+              className={`
+                relative flex flex-col justify-between h-full
+                bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl 
+                border border-white/10 hover:border-electric/50 
+                rounded-3xl p-8 md:p-10 transition-all duration-500 group
+                ${idx % 3 === 1 ? 'lg:translate-y-8' : ''} 
+                ${idx % 3 === 2 ? 'lg:translate-y-16' : ''}
+              `}
             >
-              <div className="max-w-5xl flex flex-col h-full">
+              {/* Subtle inner glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-electric/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
+
+              <div className="relative z-10 flex-1">
                 <Stars />
-                <blockquote
-                  className="font-display font-medium tracking-tight leading-[1.3] text-white mb-10"
-                  style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
-                >
-                  "{current.quote}"
-                </blockquote>
+                <p className="text-white/80 font-medium leading-relaxed text-lg mb-10">
+                  "{testimonial.quote}"
+                </p>
+              </div>
+
+              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-white/10">
+                {/* Colorful Gradient Avatar */}
+                <div className={`
+                  w-12 h-12 rounded-full flex items-center justify-center
+                  font-display font-bold text-xl text-neutral-950 shadow-lg
+                  ${idx % 3 === 0 ? 'bg-gradient-to-tr from-electric to-emerald-400' : ''}
+                  ${idx % 3 === 1 ? 'bg-gradient-to-tr from-purple-400 to-electric' : ''}
+                  ${idx % 3 === 2 ? 'bg-gradient-to-tr from-orange-400 to-electric' : ''}
+                `}>
+                  {testimonial.name.charAt(0)}
+                </div>
                 
-                <div className="mt-auto pt-6 border-t border-white/10 max-w-lg">
-                  <cite className="not-italic font-bold text-xl block text-white mb-1">
-                    {current.name}
-                  </cite>
-                  <span className="text-white/50 text-sm font-medium block">
-                    {current.role} &mdash; <span className="text-white/80">{current.company}</span>
-                  </span>
+                <div>
+                  <h4 className="text-white font-bold text-base">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-white/50 text-sm">
+                    {testimonial.role}, <span className="text-white/80">{testimonial.company}</span>
+                  </p>
                 </div>
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Navigation Indicators */}
-        <div className="mt-16 md:mt-20 pt-8 flex flex-wrap gap-4 md:gap-8 relative z-20">
-          {TESTIMONIALS.map((testimonial, idx) => (
-            <button
-              key={testimonial.id}
-              onClick={() => setCurrentIndex(idx)}
-              className="group relative flex flex-col items-start focus:outline-none cursor-pointer"
-              aria-label={`View testimonial ${idx + 1}`}
-            >
-              <span className={`text-[10px] font-mono tracking-widest transition-colors duration-300 mb-3 ${
-                idx === currentIndex ? "text-electric font-bold" : "text-white/30 group-hover:text-white/70"
-              }`}>
-                {testimonial.id}
-              </span>
-              
-              {/* Indicator Bar Container */}
-              <div className="w-12 sm:w-16 md:w-24 h-[2px] bg-white/10 relative overflow-hidden rounded-full">
-                {/* Animated Fill */}
-                {idx === currentIndex && (
-                  <motion.div
-                    className="absolute top-0 left-0 bottom-0 bg-electric origin-left"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: isHovered ? 0 : 1 }}
-                    transition={{
-                      duration: isHovered ? 0 : DURATION / 1000,
-                      ease: "linear",
-                    }}
-                  />
-                )}
-                {/* Fallback solid state if hovered (to show paused) */}
-                {idx === currentIndex && isHovered && (
-                  <div className="absolute inset-0 bg-electric opacity-50" />
-                )}
-                {/* Previously viewed ones */}
-                {idx < currentIndex && (
-                  <div className="absolute inset-0 bg-white/30" />
-                )}
-              </div>
-            </button>
           ))}
         </div>
       </div>
