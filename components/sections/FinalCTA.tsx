@@ -42,129 +42,65 @@ export function FinalCTA() {
     <>
       <section
         id="contact"
-        className="relative bg-white text-neutral-950 overflow-hidden"
-        style={{
-          paddingTop: "var(--space-section-normal)",
-          paddingBottom: "var(--space-section-normal)",
-        }}
+        className="relative bg-white text-neutral-950 overflow-hidden py-24 md:py-32"
         aria-label="Call to action"
       >
-        {/* Subtle noise */}
-        <div className="absolute inset-0 grain pointer-events-none opacity-30" />
-
-        {/* Grid overlay for texture */}
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-10"
-          style={{
-            backgroundImage: `linear-gradient(rgba(10, 14, 31, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 14, 31, 0.2) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative z-10 mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-16">
+        <div className="relative z-10 mx-auto max-w-4xl w-full px-5 md:px-10 text-center flex flex-col items-center">
           
-          {/* Main Grid Setup */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-16 lg:gap-8 items-start">
-            
-            {/* Left Column: Huge typography (col 1-7) */}
-            <div className="lg:col-span-7 flex flex-col justify-between">
-              <div>
-                <span className="text-neutral-950/60 text-sm font-mono tracking-widest mb-8 block uppercase font-bold">
-                  Start a Project
-                </span>
-                <h2
-                  className="font-display font-bold tracking-tight leading-[0.9] mb-12"
-                  style={{ fontSize: "clamp(3rem, 6.5vw, 8rem)" }}
-                >
-                  Your brand's
-                  <br />
-                  next chapter
-                  <br />
-                  starts here.
-                </h2>
-                <p className="text-neutral-950/80 text-xl md:text-2xl leading-relaxed max-w-lg font-medium">
-                  Stop settling for templates. We build award-winning digital experiences that position you as the industry leader.
-                </p>
-              </div>
-            </div>
-            
-            {/* Right Column: Editorial details (col 9-12) */}
-            <div className="lg:col-span-4 lg:col-start-9 flex flex-col">
-              
-              {/* Value Props / Benefits */}
-              <div className="border-t-2 border-neutral-950/20 pt-8 pb-12">
-                <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-neutral-950/50">Every Project Includes</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Dedicated creative director",
-                    "Custom design systems",
-                    "High-performance architecture",
-                    "Premium brand positioning"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 font-bold text-lg text-neutral-950">
-                      <span className="w-1.5 h-1.5 bg-neutral-950 rounded-full" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <span className="text-electric-dark text-sm font-mono tracking-widest mb-6 block uppercase font-bold">
+            [ Start a Project ]
+          </span>
+          
+          <h2
+            className="font-display font-bold tracking-tight leading-[1.1] mb-6 text-neutral-950"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+          >
+            Your brand's next chapter starts here.
+          </h2>
+          
+          <p className="text-neutral-500 text-lg md:text-xl leading-relaxed max-w-2xl font-medium mb-12">
+            Stop settling for templates. We build award-winning digital experiences that position you as the industry leader.
+          </p>
 
-              {/* Contact Details */}
-              <div className="border-t-2 border-neutral-950/20 pt-8 pb-12 flex flex-col gap-8">
-                <div>
-                  <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-950/50">Project Inquiry</span>
-                  <a href="mailto:visioncraftstudio22@gmail.com" className="text-2xl font-bold hover:opacity-70 transition-opacity link-underline">
-                    visioncraftstudio22@gmail.com
-                  </a>
-                </div>
-                
-                <div className="flex justify-between items-end">
-                  <div>
-                    <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-950/50">Phone</span>
-                    <p className="text-2xl font-bold">
-                      7887962110
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <span className="block text-xs uppercase tracking-widest font-bold mb-3 text-neutral-950/50">Response Time</span>
-                    <p className="text-lg font-bold flex items-center gap-2 justify-end">
-                      <span className="w-2.5 h-2.5 rounded-full bg-neutral-950 animate-pulse" />
-                      Under 24H
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <motion.button
+              onClick={() => setIsModalOpen(true)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-neutral-950 text-white h-14 px-8 rounded-full font-medium tracking-wide shadow-xl shadow-neutral-950/20 hover:bg-neutral-800 transition-all"
+            >
+              Initiate Project
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.button>
 
-              {/* CTA Button */}
-              <div className="border-t-2 border-neutral-950/20 pt-10">
-                <motion.button
-                  onClick={() => setIsModalOpen(true)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-between bg-neutral-950 text-white h-20 px-8 font-display text-2xl font-bold tracking-wide transition-all shadow-xl hover:bg-neutral-900"
-                >
-                  <span>Initiate Project</span>
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </motion.button>
-                <p className="text-center text-xs font-bold uppercase tracking-widest mt-6 text-neutral-950/50">
-                  Trusted by 50+ global brands
-                </p>
-              </div>
-
-            </div>
+            <a 
+              href="mailto:visioncraftstudio22@gmail.com" 
+              className="w-full sm:w-auto flex items-center justify-center h-14 px-8 font-medium text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100 rounded-full transition-colors"
+            >
+              visioncraftstudio22@gmail.com
+            </a>
           </div>
+
+          <div className="mt-16 md:mt-24 w-full pt-8 border-t border-neutral-200 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-neutral-500">
+            {[
+              "Dedicated creative director",
+              "Custom design systems",
+              "High-performance architecture",
+              "Premium brand positioning"
+            ].map((item, i) => (
+              <span key={i} className="flex items-center gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-electric-dark" />
+                {item}
+              </span>
+            ))}
+            <span className="flex items-center gap-2.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 animate-pulse" />
+              Response under 24H
+            </span>
+          </div>
+
         </div>
       </section>
 
