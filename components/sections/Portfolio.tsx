@@ -175,7 +175,7 @@ export function Portfolio() {
         {/* Native scroll container for manual swiping */}
         <div 
           ref={scrollContainerRef}
-          className="flex w-full overflow-x-auto snap-x snap-mandatory pl-5 pr-5 pb-8 scroll-smooth"
+          className="flex w-full overflow-x-auto snap-x snap-mandatory pl-5 pr-5 pb-8"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {/* We add an inline style to hide webkit scrollbars directly since globals.css might not have it */}
