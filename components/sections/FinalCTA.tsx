@@ -42,12 +42,15 @@ export function FinalCTA() {
     <>
       <section
         id="contact"
-        className="relative bg-white text-neutral-950 overflow-hidden py-24 md:py-32"
+        className="relative bg-electric text-neutral-950 overflow-hidden py-24 md:py-32"
         aria-label="Call to action"
       >
+        {/* Subtle dark noise overlay for texture on the bright background */}
+        <div className="absolute inset-0 grain pointer-events-none opacity-[0.15]" />
+
         <div className="relative z-10 mx-auto max-w-4xl w-full px-5 md:px-10 text-center flex flex-col items-center">
           
-          <span className="text-electric-dark text-sm font-mono tracking-widest mb-6 block uppercase font-bold">
+          <span className="text-neutral-950 text-sm font-mono tracking-widest mb-6 block uppercase font-bold">
             [ Start a Project ]
           </span>
           
@@ -58,7 +61,7 @@ export function FinalCTA() {
             Your brand's next chapter starts here.
           </h2>
           
-          <p className="text-neutral-500 text-lg md:text-xl leading-relaxed max-w-2xl font-medium mb-12">
+          <p className="text-neutral-950/70 text-lg md:text-xl leading-relaxed max-w-2xl font-medium mb-12">
             Stop settling for templates. We build award-winning digital experiences that position you as the industry leader.
           </p>
 
@@ -77,13 +80,13 @@ export function FinalCTA() {
 
             <a 
               href="mailto:visioncraftstudio22@gmail.com" 
-              className="w-full sm:w-auto flex items-center justify-center h-14 px-8 font-medium text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100 rounded-full transition-colors"
+              className="w-full sm:w-auto flex items-center justify-center h-14 px-8 font-medium text-neutral-950/80 hover:text-neutral-950 hover:bg-black/5 rounded-full transition-colors"
             >
               visioncraftstudio22@gmail.com
             </a>
           </div>
 
-          <div className="mt-16 md:mt-24 w-full pt-8 border-t border-neutral-200 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-neutral-500">
+          <div className="mt-16 md:mt-24 w-full pt-8 border-t border-neutral-950/10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-neutral-950/70">
             {[
               "Dedicated creative director",
               "Custom design systems",
@@ -91,12 +94,12 @@ export function FinalCTA() {
               "Premium brand positioning"
             ].map((item, i) => (
               <span key={i} className="flex items-center gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-electric-dark" />
+                <div className="w-1.5 h-1.5 rounded-full bg-neutral-950" />
                 {item}
               </span>
             ))}
             <span className="flex items-center gap-2.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-neutral-950 animate-pulse" />
               Response under 24H
             </span>
           </div>
