@@ -61,7 +61,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-[#030303] text-white"
+      className="relative overflow-hidden bg-[#FAFAFA] text-neutral-950"
       style={{
         paddingTop: "var(--space-section-normal)",
         paddingBottom: "var(--space-section-normal)",
@@ -70,7 +70,7 @@ export function Testimonials() {
     >
       {/* Eye-catching Background Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-electric/20 blur-[150px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-600/20 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-600/10 blur-[150px] rounded-full pointer-events-none -z-10" />
       
       {/* Grain Texture Overlay */}
       <div className="absolute inset-0 grain opacity-20 pointer-events-none -z-10" />
@@ -79,16 +79,16 @@ export function Testimonials() {
         
         {/* Section Header */}
         <div className="mb-20 md:mb-32 text-center max-w-3xl mx-auto">
-          <span className="text-electric font-bold tracking-[0.2em] text-xs uppercase mb-6 block font-mono">
+          <span className="text-electric-dark font-bold tracking-[0.2em] text-xs uppercase mb-6 block font-mono">
             [ Client Success ]
           </span>
           <h2
-            className="font-display font-bold tracking-tight text-white leading-[1.05] mb-6"
+            className="font-display font-bold tracking-tight text-neutral-950 leading-[1.05] mb-6"
             style={{ fontSize: "var(--text-display)" }}
           >
             Don't just take our word for it.
           </h2>
-          <p className="text-white/60 font-medium text-lg leading-relaxed">
+          <p className="text-neutral-950/60 font-medium text-lg leading-relaxed">
             See how we've helped visionary brands elevate their digital presence, dominate their markets, and build lasting connections.
           </p>
         </div>
@@ -108,9 +108,9 @@ export function Testimonials() {
               }}
               className={`
                 relative flex flex-col justify-between h-full
-                bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl 
-                border border-white/10 hover:border-electric/50 
-                rounded-3xl p-8 md:p-10 transition-all duration-500 group
+                bg-white/60 hover:bg-white/90 backdrop-blur-xl 
+                border border-neutral-950/5 hover:border-electric/50 
+                rounded-3xl p-8 md:p-10 transition-all duration-500 group shadow-sm
                 ${idx % 3 === 1 ? 'lg:translate-y-8' : ''} 
                 ${idx % 3 === 2 ? 'lg:translate-y-16' : ''}
               `}
@@ -120,29 +120,29 @@ export function Testimonials() {
 
               <div className="relative z-10 flex-1">
                 <Stars />
-                <p className="text-white/80 font-medium leading-relaxed text-lg mb-10">
+                <p className="text-neutral-950/80 font-medium leading-relaxed text-lg mb-10">
                   "{testimonial.quote}"
                 </p>
               </div>
 
-              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-white/10">
+              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-neutral-950/10">
                 {/* Colorful Gradient Avatar */}
                 <div className={`
                   w-12 h-12 rounded-full flex items-center justify-center
-                  font-display font-bold text-xl text-neutral-950 shadow-lg
-                  ${idx % 3 === 0 ? 'bg-gradient-to-tr from-electric to-emerald-400' : ''}
-                  ${idx % 3 === 1 ? 'bg-gradient-to-tr from-purple-400 to-electric' : ''}
-                  ${idx % 3 === 2 ? 'bg-gradient-to-tr from-orange-400 to-electric' : ''}
+                  font-display font-bold text-xl text-white shadow-lg
+                  ${idx % 3 === 0 ? 'bg-gradient-to-tr from-electric-dark to-emerald-500' : ''}
+                  ${idx % 3 === 1 ? 'bg-gradient-to-tr from-purple-500 to-electric-dark' : ''}
+                  ${idx % 3 === 2 ? 'bg-gradient-to-tr from-orange-500 to-electric-dark' : ''}
                 `}>
                   {testimonial.name.charAt(0)}
                 </div>
                 
                 <div>
-                  <h4 className="text-white font-bold text-base">
+                  <h4 className="text-neutral-950 font-bold text-base">
                     {testimonial.name}
                   </h4>
-                  <p className="text-white/50 text-sm">
-                    {testimonial.role}, <span className="text-white/80">{testimonial.company}</span>
+                  <p className="text-neutral-950/50 text-sm">
+                    {testimonial.role}, <span className="text-neutral-950/80">{testimonial.company}</span>
                   </p>
                 </div>
               </div>
