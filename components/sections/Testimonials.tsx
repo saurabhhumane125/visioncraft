@@ -94,19 +94,18 @@ export function Testimonials() {
       if (timerRef.current) clearInterval(timerRef.current)
       return
     }
-    // Set up the interval for auto rotation
     timerRef.current = setInterval(next, DURATION)
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [isHovered, next, currentIndex]) // Added currentIndex so manual navigation resets the timer
+  }, [isHovered, next, currentIndex])
 
   const current = TESTIMONIALS[currentIndex]
 
   return (
     <section
       id="testimonials"
-      className="text-neutral-950 relative overflow-hidden bg-gradient-to-b from-[#F8FAFF] via-[#F2F7FF] via-[45%] to-[#F7F8FA]"
+      className="text-white relative overflow-hidden bg-[#050505]"
       style={{
         paddingTop: "var(--space-section-normal)",
         paddingBottom: "var(--space-section-normal)",
@@ -117,55 +116,64 @@ export function Testimonials() {
       onTouchStart={() => setIsHovered(true)}
       onTouchEnd={() => setIsHovered(false)}
     >
-      {/* Subtle background glow */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-lime/10 blur-[120px] rounded-full pointer-events-none -z-10 transform translate-x-1/4 -translate-y-1/4" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-electric/10 blur-[100px] rounded-full pointer-events-none -z-10 transform -translate-x-1/4 translate-y-1/4" />
+      {/* Dark mode glow effects */}
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-electric/5 blur-[120px] rounded-full pointer-events-none -z-10 transform translate-x-1/4 -translate-y-1/4" />
+      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-neutral-800/20 blur-[100px] rounded-full pointer-events-none -z-10 transform -translate-x-1/4 translate-y-1/4" />
+      
+      {/* Subtle Grain Texture */}
+      <div className="absolute inset-0 grain opacity-20 pointer-events-none -z-10" />
+
+      {/* Massive Background Quotation Mark */}
+      <div className="absolute top-[10%] left-[5%] text-[30vw] leading-none font-display text-neutral-900/40 select-none pointer-events-none z-0">
+        "
+      </div>
 
       <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="mb-20 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-10">
           <div className="max-w-2xl">
-            <span className="text-electric font-bold tracking-widest text-sm uppercase mb-4 block">
-              Testimonials
+            <span className="text-electric font-bold tracking-widest text-xs uppercase mb-6 block font-mono">
+              [ Client Outcomes ]
             </span>
             <h2
-              className="font-display font-bold tracking-tight text-neutral-950 leading-[1.05]"
+              className="font-display font-bold tracking-tight text-white leading-[1.05]"
               style={{ fontSize: "var(--text-display)" }}
             >
-              Trusted by ambitious brands.
+              Trusted by<br/>ambitious brands.
             </h2>
           </div>
-          <p className="text-neutral-950/60 font-medium max-w-sm text-sm md:text-base leading-relaxed md:text-left md:text-right pb-2">
-            We don't just deliver creative assets. We engineer partnerships that drive measurable business outcomes.
+          <p className="text-white/50 font-medium max-w-sm text-sm md:text-base leading-relaxed md:text-right pb-2">
+            We don't just deliver creative assets. We engineer partnerships that drive measurable business outcomes and elevate market positioning.
           </p>
         </div>
 
-        {/* Main Content Area */}
-        <div className="relative min-h-[400px] lg:min-h-[320px]">
+        {/* Main Content Area - Increased min-height to strictly prevent overlap */}
+        <div className="relative min-h-[480px] sm:min-h-[400px] lg:min-h-[350px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="absolute inset-0 w-full flex flex-col"
             >
               <div className="max-w-5xl flex flex-col h-full">
                 <Stars />
                 <blockquote
-                  className="font-display font-medium tracking-tight leading-[1.25] text-neutral-950 mb-10"
-                  style={{ fontSize: "clamp(1.75rem, 4vw, 3.25rem)" }}
+                  className="font-display font-medium tracking-tight leading-[1.3] text-white mb-10"
+                  style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
                 >
                   "{current.quote}"
                 </blockquote>
-                <div className="mt-auto">
-                  <cite className="not-italic font-bold text-xl block text-neutral-950">
+                
+                <div className="mt-auto pt-6 border-t border-white/10 max-w-lg">
+                  <cite className="not-italic font-bold text-xl block text-white mb-1">
                     {current.name}
                   </cite>
-                  <span className="text-neutral-950/60 text-base font-medium block mt-1">
-                    {current.role}, <span className="text-neutral-950">{current.company}</span>
+                  <span className="text-white/50 text-sm font-medium block">
+                    {current.role} &mdash; <span className="text-white/80">{current.company}</span>
                   </span>
                 </div>
               </div>
@@ -174,23 +182,23 @@ export function Testimonials() {
         </div>
 
         {/* Navigation Indicators */}
-        <div className="mt-16 md:mt-24 pt-8 border-t border-neutral-950/10 flex flex-wrap gap-4 md:gap-8 relative z-20">
+        <div className="mt-16 md:mt-20 pt-8 flex flex-wrap gap-4 md:gap-8 relative z-20">
           {TESTIMONIALS.map((testimonial, idx) => (
             <button
               key={testimonial.id}
               onClick={() => setCurrentIndex(idx)}
-              className="group relative flex flex-col items-start focus:outline-none"
+              className="group relative flex flex-col items-start focus:outline-none cursor-pointer"
               aria-label={`View testimonial ${idx + 1}`}
             >
-              <span className={`text-xs font-mono tracking-widest transition-colors duration-300 mb-2 ${
-                idx === currentIndex ? "text-neutral-950 font-bold" : "text-neutral-950/40 group-hover:text-neutral-950/70"
+              <span className={`text-[10px] font-mono tracking-widest transition-colors duration-300 mb-3 ${
+                idx === currentIndex ? "text-electric font-bold" : "text-white/30 group-hover:text-white/70"
               }`}>
                 {testimonial.id}
               </span>
               
               {/* Indicator Bar Container */}
-              <div className="w-12 sm:w-16 md:w-20 h-[2px] bg-neutral-950/10 relative overflow-hidden">
-                {/* Animated Fill (only animates if currently active and not hovered) */}
+              <div className="w-12 sm:w-16 md:w-24 h-[2px] bg-white/10 relative overflow-hidden rounded-full">
+                {/* Animated Fill */}
                 {idx === currentIndex && (
                   <motion.div
                     className="absolute top-0 left-0 bottom-0 bg-electric origin-left"
@@ -208,7 +216,7 @@ export function Testimonials() {
                 )}
                 {/* Previously viewed ones */}
                 {idx < currentIndex && (
-                  <div className="absolute inset-0 bg-neutral-950/30" />
+                  <div className="absolute inset-0 bg-white/30" />
                 )}
               </div>
             </button>
