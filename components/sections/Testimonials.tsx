@@ -61,7 +61,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-[#FAFAFA] text-neutral-950"
+      className="relative overflow-hidden bg-[#F7F4ED] text-neutral-950"
       style={{
         paddingTop: "var(--space-section-normal)",
         paddingBottom: "var(--space-section-normal)",
@@ -75,10 +75,10 @@ export function Testimonials() {
       {/* Grain Texture Overlay */}
       <div className="absolute inset-0 grain opacity-20 pointer-events-none -z-10" />
 
-      <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 relative z-10">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 relative z-10 mb-16 md:mb-24">
         
         {/* Section Header */}
-        <div className="mb-20 md:mb-32 text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto">
           <span className="text-electric-dark font-bold tracking-[0.2em] text-xs uppercase mb-6 block font-mono">
             [ Client Success ]
           </span>
@@ -92,63 +92,62 @@ export function Testimonials() {
             See how we've helped visionary brands elevate their digital presence, dominate their markets, and build lasting connections.
           </p>
         </div>
+      </div>
 
-        {/* Modern 3-Column Staggered Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
-          {TESTIMONIALS.map((testimonial, idx) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ 
-                duration: 0.7, 
-                delay: idx * 0.1, 
-                ease: [0.21, 1.11, 0.81, 0.99] 
-              }}
-              className={`
-                relative flex flex-col justify-between h-full
-                bg-white/60 hover:bg-white/90 backdrop-blur-xl 
-                border border-neutral-950/5 hover:border-electric/50 
-                rounded-3xl p-8 md:p-10 transition-all duration-500 group shadow-sm
-                ${idx % 3 === 1 ? 'lg:translate-y-8' : ''} 
-                ${idx % 3 === 2 ? 'lg:translate-y-16' : ''}
-              `}
+      {/* Infinite Marquee */}
+      <div className="relative w-full overflow-hidden flex items-center py-4">
+        {/* Fading Edges */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-48 bg-gradient-to-r from-[#F7F4ED] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-48 bg-gradient-to-l from-[#F7F4ED] to-transparent z-10 pointer-events-none" />
+
+        <motion.div
+          className="flex w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+        >
+          {/* Duplicated for seamless loop */}
+          {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, idx) => (
+            <div
+              key={idx}
+              className="w-[320px] md:w-[450px] flex-shrink-0 mx-4"
             >
-              {/* Subtle inner glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-electric/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
-
-              <div className="relative z-10 flex-1">
-                <Stars />
-                <p className="text-neutral-950/80 font-medium leading-relaxed text-lg mb-10">
-                  "{testimonial.quote}"
-                </p>
-              </div>
-
-              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-neutral-950/10">
-                {/* Colorful Gradient Avatar */}
-                <div className={`
-                  w-12 h-12 rounded-full flex items-center justify-center
-                  font-display font-bold text-xl text-white shadow-lg
-                  ${idx % 3 === 0 ? 'bg-gradient-to-tr from-electric-dark to-emerald-500' : ''}
-                  ${idx % 3 === 1 ? 'bg-gradient-to-tr from-purple-500 to-electric-dark' : ''}
-                  ${idx % 3 === 2 ? 'bg-gradient-to-tr from-orange-500 to-electric-dark' : ''}
-                `}>
-                  {testimonial.name.charAt(0)}
-                </div>
+              <div className="relative flex flex-col justify-between h-[350px] md:h-[380px] bg-white/70 hover:bg-white/95 backdrop-blur-xl border border-neutral-950/5 hover:border-electric/50 rounded-3xl p-8 transition-all duration-500 group shadow-sm">
                 
-                <div>
-                  <h4 className="text-neutral-950 font-bold text-base">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-neutral-950/50 text-sm">
-                    {testimonial.role}, <span className="text-neutral-950/80">{testimonial.company}</span>
+                {/* Subtle inner glow on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-electric/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
+
+                <div className="relative z-10 flex-1 whitespace-normal">
+                  <Stars />
+                  <p className="text-neutral-950/80 font-medium leading-relaxed text-base md:text-lg">
+                    "{testimonial.quote}"
                   </p>
                 </div>
+
+                <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-neutral-950/10 mt-auto">
+                  {/* Colorful Gradient Avatar */}
+                  <div className={`
+                    w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0
+                    font-display font-bold text-xl text-white shadow-lg
+                    ${idx % 3 === 0 ? 'bg-gradient-to-tr from-electric-dark to-emerald-500' : ''}
+                    ${idx % 3 === 1 ? 'bg-gradient-to-tr from-purple-500 to-electric-dark' : ''}
+                    ${idx % 3 === 2 ? 'bg-gradient-to-tr from-orange-500 to-electric-dark' : ''}
+                  `}>
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  
+                  <div className="overflow-hidden whitespace-normal">
+                    <h4 className="text-neutral-950 font-bold text-base truncate">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-neutral-950/50 text-sm line-clamp-1">
+                      {testimonial.role}, <span className="text-neutral-950/80">{testimonial.company}</span>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
