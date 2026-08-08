@@ -150,7 +150,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} VisionCraft Studio
           </p>
           <p className="text-[10px] text-neutral-100/40 uppercase tracking-[0.2em] font-mono">
-            Hyderabad, India
+            Virar West
           </p>
         </div>
       </div>

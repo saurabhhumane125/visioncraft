@@ -9,7 +9,7 @@ const SERVICE_VISUALS: Record<string, { bgClass: string; label: string; textClas
     bgClass: "bg-electric",
     label: "Web",
     textClass: "text-white",
-    img: "/images/portfolio-product.png",
+    img: "/images/modern_web_dev.png",
   },
   "digital-marketing": {
     bgClass: "bg-lime",
