@@ -76,7 +76,7 @@ export function Hero() {
           </div>
 
           {/* Right Side: Interactive Constellation */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
+          <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end mt-12 lg:mt-0 lg:-mt-24">
             <ServiceConstellation />
           </div>
         </div>
