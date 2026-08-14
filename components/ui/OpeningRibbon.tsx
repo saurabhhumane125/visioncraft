@@ -93,13 +93,11 @@ export function OpeningRibbon() {
     },
   }
 
-  // Premium 3D Satin Ribbon styles
+  // Premium bright Satin Ribbon styles
   const ribbonGradients = {
-    base: "linear-gradient(to bottom, #5a000b 0%, #a6091b 15%, #E0364A 35%, #FF6B73 50%, #E0364A 65%, #a6091b 85%, #5a000b 100%)",
-    shadow: "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.8) 100%)",
-    shadowRight: "linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.8) 100%)",
-    goldTrimTop: "linear-gradient(90deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)",
-    goldTrimBottom: "linear-gradient(90deg, #AA771C, #FBF5B7, #B38728, #FCF6BA, #BF953F)",
+    base: "linear-gradient(to bottom, #E0364A 0%, #FF4D5A 20%, #FF6B73 50%, #FF4D5A 80%, #E0364A 100%)",
+    shadow: "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(224,54,74,0.3) 80%, rgba(224,54,74,0.6) 100%)",
+    shadowRight: "linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(224,54,74,0.3) 80%, rgba(224,54,74,0.6) 100%)",
   }
 
   return (
@@ -136,46 +134,35 @@ export function OpeningRibbon() {
           variants={leftHalfVariants}
           initial="closed"
           animate={ribbonState}
-          className="absolute left-0 top-0 bottom-0 w-1/2 origin-top-right shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+          className="absolute left-0 top-0 bottom-0 w-1/2 origin-top-right shadow-[0_20px_40px_rgba(224,54,74,0.4)]"
           style={{ background: ribbonGradients.base }}
         >
-          {/* Gold Trims */}
-          <div className="absolute top-0 left-0 right-0 h-1" style={{ background: ribbonGradients.goldTrimTop, opacity: 0.8 }} />
-          <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: ribbonGradients.goldTrimBottom, opacity: 0.8 }} />
-
-          {/* Inner shadow/fold for realism near the cut */}
-          <div className="absolute inset-y-0 right-0 w-48 pointer-events-none mix-blend-multiply" style={{ background: ribbonGradients.shadow }} />
+          {/* Inner fold highlight/shadow */}
+          <div className="absolute inset-y-0 right-0 w-32 pointer-events-none mix-blend-multiply" style={{ background: ribbonGradients.shadow }} />
           
           {/* Left half of the bow */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[15%] z-10">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[10%] z-10">
             <div className="relative">
-              {/* Back Loop Shadow */}
-              <div className="absolute inset-0 bg-black/40 blur-md rounded-full translate-y-4 -translate-x-2" />
               
-              {/* Main Bow Loop */}
+              {/* Main Bow Loop - Elegant & Bright */}
               <div 
-                className="relative w-20 sm:w-32 h-24 sm:h-36 rounded-l-[100px] rounded-r-2xl border-y-[12px] border-l-[16px] border-r-[4px] overflow-hidden"
+                className="relative w-20 sm:w-28 h-20 sm:h-28 rounded-l-[100px] rounded-r-xl border-y-[8px] border-l-[12px] border-r-[2px] overflow-hidden"
                 style={{ 
-                  borderColor: "transparent", // Use box-shadow for a seamless 3D edge
-                  background: "linear-gradient(135deg, #FF8A93 0%, #d31027 60%, #5a000b 100%)",
-                  boxShadow: "inset -15px 0 30px rgba(0,0,0,0.7), inset 5px 10px 15px rgba(255,255,255,0.4), -5px 15px 25px rgba(0,0,0,0.6)"
+                  borderColor: "transparent",
+                  background: "linear-gradient(135deg, #FF8A93 0%, #E0364A 60%, #b81e30 100%)",
+                  boxShadow: "inset -10px 0 20px rgba(184,30,48,0.7), inset 5px 5px 15px rgba(255,255,255,0.5), -5px 10px 20px rgba(0,0,0,0.3)"
                 }}
-              >
-                {/* Inner dark void of the loop */}
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3/4 h-2/3 bg-black/60 rounded-l-[50px] blur-[2px] shadow-[inset_10px_0_20px_rgba(0,0,0,1)]" />
-              </div>
+              />
 
               {/* Bow Tail */}
               <div 
-                className="absolute top-[80%] right-4 w-16 sm:w-20 h-32 sm:h-48 origin-top-right -rotate-[20deg]"
+                className="absolute top-[80%] right-2 w-12 sm:w-16 h-24 sm:h-32 origin-top-right -rotate-[15deg]"
                 style={{
-                  background: "linear-gradient(180deg, #a6091b 0%, #FF6B73 20%, #E0364A 60%, #5a000b 100%)",
+                  background: "linear-gradient(180deg, #b81e30 0%, #FF6B73 20%, #E0364A 60%, #9e1424 100%)",
                   clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%)",
-                  boxShadow: "-10px 15px 25px rgba(0,0,0,0.5)"
+                  boxShadow: "-5px 10px 15px rgba(0,0,0,0.3)"
                 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20" />
-              </div>
+              />
             </div>
           </div>
         </motion.div>
@@ -185,55 +172,44 @@ export function OpeningRibbon() {
           variants={rightHalfVariants}
           initial="closed"
           animate={ribbonState}
-          className="absolute right-0 top-0 bottom-0 w-1/2 origin-top-left shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+          className="absolute right-0 top-0 bottom-0 w-1/2 origin-top-left shadow-[0_20px_40px_rgba(224,54,74,0.4)]"
           style={{ background: ribbonGradients.base }}
         >
-          {/* Gold Trims */}
-          <div className="absolute top-0 left-0 right-0 h-1" style={{ background: ribbonGradients.goldTrimTop, opacity: 0.8 }} />
-          <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: ribbonGradients.goldTrimBottom, opacity: 0.8 }} />
-
-          {/* Inner shadow/fold for realism near the cut */}
-          <div className="absolute inset-y-0 left-0 w-48 pointer-events-none mix-blend-multiply" style={{ background: ribbonGradients.shadowRight }} />
+          {/* Inner fold highlight/shadow */}
+          <div className="absolute inset-y-0 left-0 w-32 pointer-events-none mix-blend-multiply" style={{ background: ribbonGradients.shadowRight }} />
           
           {/* Right half of the bow */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[15%] z-10">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[10%] z-10">
             <div className="relative">
-              {/* Back Loop Shadow */}
-              <div className="absolute inset-0 bg-black/40 blur-md rounded-full translate-y-4 translate-x-2" />
 
-              {/* Main Bow Loop */}
+              {/* Main Bow Loop - Elegant & Bright */}
               <div 
-                className="relative w-20 sm:w-32 h-24 sm:h-36 rounded-r-[100px] rounded-l-2xl border-y-[12px] border-r-[16px] border-l-[4px] overflow-hidden"
+                className="relative w-20 sm:w-28 h-20 sm:h-28 rounded-r-[100px] rounded-l-xl border-y-[8px] border-r-[12px] border-l-[2px] overflow-hidden"
                 style={{ 
                   borderColor: "transparent",
-                  background: "linear-gradient(225deg, #FF8A93 0%, #d31027 60%, #5a000b 100%)",
-                  boxShadow: "inset 15px 0 30px rgba(0,0,0,0.7), inset -5px 10px 15px rgba(255,255,255,0.4), 5px 15px 25px rgba(0,0,0,0.6)"
+                  background: "linear-gradient(225deg, #FF8A93 0%, #E0364A 60%, #b81e30 100%)",
+                  boxShadow: "inset 10px 0 20px rgba(184,30,48,0.7), inset -5px 5px 15px rgba(255,255,255,0.5), 5px 10px 20px rgba(0,0,0,0.3)"
                 }}
-              >
-                {/* Inner dark void of the loop */}
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3/4 h-2/3 bg-black/60 rounded-r-[50px] blur-[2px] shadow-[inset_-10px_0_20px_rgba(0,0,0,1)]" />
-              </div>
+              />
 
-              {/* Center Knot (attached to the right side so it splits cleanly) */}
+              {/* Center Knot */}
               <div 
-                className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-12 sm:w-16 h-14 sm:h-20 rounded-2xl z-20"
+                className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-10 sm:w-14 h-12 sm:h-16 rounded-xl z-20"
                 style={{
-                  background: "linear-gradient(135deg, #FF8A93 0%, #d31027 40%, #5a000b 100%)",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.6), inset 0 5px 10px rgba(255,255,255,0.5), inset 0 -5px 15px rgba(0,0,0,0.8)"
+                  background: "linear-gradient(135deg, #FF8A93 0%, #E0364A 40%, #b81e30 100%)",
+                  boxShadow: "0 5px 15px rgba(0,0,0,0.4), inset 0 3px 8px rgba(255,255,255,0.6), inset 0 -3px 10px rgba(184,30,48,0.8)"
                 }}
               />
 
               {/* Bow Tail */}
               <div 
-                className="absolute top-[80%] left-4 w-16 sm:w-20 h-32 sm:h-48 origin-top-left rotate-[20deg] z-0"
+                className="absolute top-[80%] left-2 w-12 sm:w-16 h-24 sm:h-32 origin-top-left rotate-[15deg] z-0"
                 style={{
-                  background: "linear-gradient(180deg, #a6091b 0%, #FF6B73 20%, #E0364A 60%, #5a000b 100%)",
+                  background: "linear-gradient(180deg, #b81e30 0%, #FF6B73 20%, #E0364A 60%, #9e1424 100%)",
                   clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%)",
-                  boxShadow: "10px 15px 25px rgba(0,0,0,0.5)"
+                  boxShadow: "5px 10px 15px rgba(0,0,0,0.3)"
                 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/20" />
-              </div>
+              />
             </div>
           </div>
         </motion.div>
