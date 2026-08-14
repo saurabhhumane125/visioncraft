@@ -29,7 +29,7 @@ export function Hero() {
         className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-8 lg:pb-24 relative z-10 w-full"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-160px)] gap-12 lg:gap-8">
-          <div className="w-full lg:w-1/2 lg:pr-8 lg:-mt-24">
+          <div className="w-full lg:w-1/2 lg:pr-8">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -76,7 +76,7 @@ export function Hero() {
           </div>
 
           {/* Right Side: Interactive Constellation */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end mt-12 lg:mt-0 lg:-mt-48 xl:-mt-64">
+          <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
             <ServiceConstellation />
           </div>
         </div>
