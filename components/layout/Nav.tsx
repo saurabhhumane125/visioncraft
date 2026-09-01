@@ -138,9 +138,9 @@ export default function Nav() {
                   </a>
                 </div>
                 <div className="flex gap-6 text-sm text-neutral-100/60">
-                  <a href="#" className="hover:text-electric transition-colors">Instagram</a>
-                  <a href="#" className="hover:text-electric transition-colors">LinkedIn</a>
-                  <a href="#" className="hover:text-electric transition-colors">Twitter</a>
+                  <a href="https://www.instagram.com/visioncraftstudio__/" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">Instagram</a>
+                  <a href="https://www.linkedin.com/in/visioncraft-studio-681ba3429/" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">LinkedIn</a>
+                  <a href="https://www.youtube.com/@VisionCraftStudio-22" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">YouTube</a>
                 </div>
               </motion.div>
             </div>

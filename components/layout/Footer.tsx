@@ -54,14 +54,14 @@ export default function Footer() {
               </div>
 
               <div className="flex gap-8 text-sm font-medium">
-                <a href="#" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
+                <a href="https://www.instagram.com/visioncraftstudio__/" target="_blank" rel="noopener noreferrer" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
                   Instagram
                 </a>
-                <a href="#" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
+                <a href="https://www.linkedin.com/in/visioncraft-studio-681ba3429/" target="_blank" rel="noopener noreferrer" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
                   LinkedIn
                 </a>
-                <a href="#" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
-                  Behance
+                <a href="https://www.youtube.com/@VisionCraftStudio-22" target="_blank" rel="noopener noreferrer" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
+                  YouTube
                 </a>
               </div>
             </div>

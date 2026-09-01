@@ -38,15 +38,16 @@ export default function RootLayout({
               "@type": "Organization",
               name: "VisionCraft Studio",
               description: "Full-service creative-tech studio — websites, design, video, marketing, and visualization.",
-              url: "https://visioncraft.studio",
+              url: "http://visioncraftstudios.vercel.app/",
               contactPoint: {
                 "@type": "ContactPoint",
                 email: "visioncraftstudio22@gmail.com",
                 contactType: "customer service",
               },
               sameAs: [
-                "https://instagram.com/visioncraftstudio",
-                "https://linkedin.com/company/visioncraftstudio",
+                "https://www.instagram.com/visioncraftstudio__/",
+                "https://www.youtube.com/@VisionCraftStudio-22",
+                "https://www.linkedin.com/in/visioncraft-studio-681ba3429/",
               ],
             }),
           }}
