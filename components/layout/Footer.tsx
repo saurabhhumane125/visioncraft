@@ -63,6 +63,9 @@ export default function Footer() {
                 <a href="https://www.youtube.com/@VisionCraftStudio-22" target="_blank" rel="noopener noreferrer" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
                   YouTube
                 </a>
+                <a href="https://www.facebook.com/profile.php?id=61593832545046" target="_blank" rel="noopener noreferrer" className="text-neutral-100/50 hover:text-neutral-100 transition-colors">
+                  Facebook
+                </a>
               </div>
             </div>
           </div>

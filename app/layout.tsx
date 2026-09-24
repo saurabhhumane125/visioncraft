@@ -48,6 +48,7 @@ export default function RootLayout({
                 "https://www.instagram.com/visioncraftstudio__/",
                 "https://www.youtube.com/@VisionCraftStudio-22",
                 "https://www.linkedin.com/in/visioncraft-studio-681ba3429/",
+                "https://www.facebook.com/profile.php?id=61593832545046"
               ],
             }),
           }}

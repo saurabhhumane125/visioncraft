@@ -141,6 +141,7 @@ export default function Nav() {
                   <a href="https://www.instagram.com/visioncraftstudio__/" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">Instagram</a>
                   <a href="https://www.linkedin.com/in/visioncraft-studio-681ba3429/" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">LinkedIn</a>
                   <a href="https://www.youtube.com/@VisionCraftStudio-22" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">YouTube</a>
+                  <a href="https://www.facebook.com/profile.php?id=61593832545046" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">Facebook</a>
                 </div>
               </motion.div>
             </div>
